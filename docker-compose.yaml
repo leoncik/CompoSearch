@@ -1,0 +1,10 @@
+version: '2.18.1'
+services:
+  server:
+    build: ./server
+    container_name: server_container
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./server:/app
+      - /app/node_modules
