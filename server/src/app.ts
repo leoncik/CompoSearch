@@ -1,5 +1,6 @@
 import express, { Express } from "express";
 import cors from 'cors'
+import pool from "./config/db";
 
 const app: Express = express();
 const port: number = 3000;
@@ -7,7 +8,15 @@ const port: number = 3000;
 // Middlewares
 app.use(cors())
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
+  console.log("Test");
+  const { rows } = await pool.query(
+    `SELECT * FROM MOCK_DATA`,
+);
+
+console.log(rows);
+
+  
     res.json([{
       "id": 1,
       "first_name": "Con",
