@@ -1,7 +1,21 @@
 version: '2.18.1'
 services:
+  database:
+    image: postgres:13
+    container_name: database_container
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password1234
+      POSTGRES_DB: compo_search_database
+    ports:
+      - 5432:5432
+    volumes:
+      - ./server/src/config/populate-db.sql:/docker-entrypoint-initdb.d/populate-db.sql
   server:
     build: ./server
+    depends_on:
+      - database
     container_name: server_container
     ports:
       - '3000:3000'
