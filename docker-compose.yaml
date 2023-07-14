@@ -1,5 +1,7 @@
 version: '2.18.1'
 services:
+
+  # DATABSE SERVICE
   database:
     image: postgres:13
     container_name: database_container
@@ -12,6 +14,8 @@ services:
       - 5432:5432
     volumes:
       - ./server/src/config/populate-db.sql:/docker-entrypoint-initdb.d/populate-db.sql
+
+  # SERVER SERVICE 
   server:
     build: ./server
     depends_on:
@@ -22,6 +26,8 @@ services:
     volumes:
       - ./server:/app
       - /app/node_modules
+
+  # CLIENT SERVICE
   client:
     build: ./client
     container_name: client_container
@@ -30,3 +36,14 @@ services:
     volumes:
       - ./client:/app
       - /app/node_modules
+      
+  # PGADMIN SERVICE
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+            PGADMIN_DEFAULT_EMAIL: "admin@example.com"
+            PGADMIN_DEFAULT_PASSWORD: "password123"
+    ports:
+        - "16543:80"
+    depends_on:
+        - database
