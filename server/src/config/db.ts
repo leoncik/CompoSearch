@@ -1,4 +1,4 @@
-import { Pool } from 'pg'
+import { Pool } from 'pg';
 
 const pool = new Pool({
     // host: process.env.PGHOST,
@@ -14,4 +14,4 @@ const pool = new Pool({
     password: 'password1234',
 });
 
-export default pool
+export default pool;

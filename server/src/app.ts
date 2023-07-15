@@ -1,31 +1,31 @@
-import express, { Express } from "express";
-import cors from 'cors'
-import pool from "./config/db";
+import express, { Express } from 'express';
+import cors from 'cors';
+import pool from './config/db';
 
 const app: Express = express();
 const port: number = 3000;
 
 // Middlewares
-app.use(cors())
+app.use(cors());
 
 // Routes
-app.get("/composers", async (req, res) => {
-  try {
-    const { name } = req.query;
-    const composers = await pool.query(`
+app.get('/composers', async (req, res) => {
+    try {
+        const { name } = req.query;
+        const composers = await pool.query(
+            `
       SELECT * FROM mock_data
       WHERE first_name || ' ' || last_name
       ILIKE $1`,
-      [`%${name}%`]
-    )
+            [`%${name}%`]
+        );
 
-    res.json(composers.rows)
-
-  } catch (error) {
-    console.log(error);
-  }
-})
+        res.json(composers.rows);
+    } catch (error) {
+        console.log(error);
+    }
+});
 
 app.listen(port, () => {
-  console.log(`Listening for requests on port ${port}`);
-})
+    console.log(`Listening for requests on port ${port}`);
+});
