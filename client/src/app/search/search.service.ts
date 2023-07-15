@@ -3,17 +3,16 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root',
 })
 export class SearchService {
+    baseUrl = 'http://localhost:3000/';
 
-  baseUrl = "http://localhost:3000/"
+    constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
+    // Todo: add composer interface.
 
-  // Todo: add composer interface.
-
-  searchComposers(searchTerm: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/composers/?name=${searchTerm}`)
-  }
+    searchComposers(searchTerm: string): Observable<any> {
+        return this.http.get(`${this.baseUrl}/composers/?name=${searchTerm}`);
+    }
 }
