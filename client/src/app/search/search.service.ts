@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
     providedIn: 'root',
 })
 export class SearchService {
-    baseUrl = 'http://localhost:3000/';
+    baseUrl = 'http://localhost:3000';
 
     constructor(private http: HttpClient) {}
 
