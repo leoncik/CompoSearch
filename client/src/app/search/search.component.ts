@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from './search.service';
 import { FormBuilder } from '@angular/forms';
+import { Composer } from './Composer.model';
 
 @Component({
     selector: 'app-search',
@@ -9,7 +10,7 @@ import { FormBuilder } from '@angular/forms';
 })
 export class SearchComponent implements OnInit {
     searchTerm = '';
-    composers = [];
+    composers: Composer[] = [];
 
     constructor(
         private searchService: SearchService,

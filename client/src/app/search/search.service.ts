@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Composer } from './Composer.model';
 
 @Injectable({
     providedIn: 'root',
@@ -10,9 +11,9 @@ export class SearchService {
 
     constructor(private http: HttpClient) {}
 
-    // Todo: add composer interface.
-
-    searchComposers(searchTerm: string): Observable<any> {
-        return this.http.get(`${this.baseUrl}/composers/?name=${searchTerm}`);
+    searchComposers(searchTerm: string): Observable<Composer[]> {
+        return this.http.get<Composer[]>(
+            `${this.baseUrl}/composers/?name=${searchTerm}`
+        );
     }
 }

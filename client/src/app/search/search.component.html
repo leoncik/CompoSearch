@@ -11,9 +11,9 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>John</td>
-            <td>Doe</td>
+        <tr *ngFor="let composer of composers">
+            <td>{{ composer.first_name }}</td>
+            <td>{{ composer.last_name }}</td>
         </tr>
     </tbody>
 </table>
