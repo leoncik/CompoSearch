@@ -14,7 +14,7 @@ app.get('/composers', async (req, res) => {
         const { name } = req.query;
         const composers = await pool.query(
             `
-      SELECT * FROM mock_data
+      SELECT * FROM composers
       WHERE first_name || ' ' || last_name
       ILIKE $1`,
             [`%${name}%`]
