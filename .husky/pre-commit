@@ -6,6 +6,5 @@ cd server
 npm run lint-server
 
 # Lint and format the client directory
-# For now this script is only formating the client.
 cd ../client 
 npm run lint-client
