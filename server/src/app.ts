@@ -13,6 +13,7 @@ const port: number = 3000;
 
 // Middlewares
 app.use(cors());
+app.use(express.static(__dirname + '/images')); // Allows to serve static files
 app.use('/composers', composersRoutes);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 

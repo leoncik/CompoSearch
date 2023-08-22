@@ -11,6 +11,7 @@ import { Composer } from './Composer.model';
 export class SearchComponent implements OnInit {
     searchTerm = '';
     composers: Composer[] = [];
+    baseApiUrl = 'http://localhost:3000';
 
     constructor(
         private searchService: SearchService,

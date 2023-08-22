@@ -14,6 +14,12 @@
         <tr *ngFor="let composer of composers">
             <td>{{ composer.last_name }}</td>
             <td>{{ composer.first_name }}</td>
+            <td>
+                <img
+                    [src]="baseApiUrl + '/' + composer.avatar_file_name"
+                    alt=""
+                />
+            </td>
         </tr>
     </tbody>
 </table>

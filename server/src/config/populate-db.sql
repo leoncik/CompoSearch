@@ -1,7 +1,8 @@
 create table COMPOSERS (
 	id INT,
 	last_name VARCHAR(50),
-	first_name VARCHAR(50)
+	first_name VARCHAR(50),
+	avatar_file_name VARCHAR(300) DEFAULT '/avatars/default-avatar.png'
 );
 
 INSERT INTO COMPOSERS (id, last_name, first_name) VALUES (1, 'Bach', 'Johann Sebastian');
