@@ -7,7 +7,7 @@
     "lint-server": "lint-staged",
     "start": "nodemon src/app.ts",
     "build": "tsc",
-    "prepare": "cd .. && husky install frontend/.husky"
+    "prepare": "cd .. && husky install server/.husky"
   },
   "keywords": [],
   "author": "Leoncik",
