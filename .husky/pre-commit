@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Lint and format the server directory
+cd server
+npm run lint-server
+
+# Lint and format the client directory
+# cd ../client 
+# npm run lint-client
