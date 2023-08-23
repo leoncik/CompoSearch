@@ -9,6 +9,7 @@ import { SearchComponent } from './search/search.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchBarComponent } from './search/search-bar/search-bar.component';
 import { SearchResultsComponent } from './search/search-results/search-results.component';
+import { ComposerDetailsComponent } from './composer-details/composer-details.component';
 
 @NgModule({
     declarations: [
@@ -17,6 +18,7 @@ import { SearchResultsComponent } from './search/search-results/search-results.c
         HeaderComponent,
         SearchBarComponent,
         SearchResultsComponent,
+        ComposerDetailsComponent,
     ],
     imports: [
         BrowserModule,
