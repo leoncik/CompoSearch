@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ComposerDetails } from '../search/Composer.model';
 import { SearchService } from '../search/search.service';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'app-composer-details',
@@ -9,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
     styleUrls: ['./composer-details.component.css'],
 })
 export class ComposerDetailsComponent implements OnInit {
-    composerDetails!: ComposerDetails | undefined;
+    composerDetails$!: Observable<ComposerDetails>;
 
     constructor(
         private searchService: SearchService,
@@ -18,11 +19,6 @@ export class ComposerDetailsComponent implements OnInit {
 
     ngOnInit(): void {
         const composerId = +this.route.snapshot.params['composerId'];
-        this.searchService
-            .getComposerById(composerId)
-            .subscribe((composerDetails) => {
-                console.log(composerDetails);
-                this.composerDetails = composerDetails;
-            });
+        this.composerDetails$ = this.searchService.getComposerById(composerId);
     }
 }
