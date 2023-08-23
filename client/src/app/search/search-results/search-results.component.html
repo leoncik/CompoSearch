@@ -17,6 +17,12 @@
                     <img
                         class="avatar-img"
                         [src]="baseApiUrl + '/' + composer.avatar_file_name"
+                        [style.border-radius]="
+                            composer.avatar_file_name !==
+                            '/avatars/default-avatar.png'
+                                ? '50%'
+                                : ''
+                        "
                         alt=""
                     />
                 </div>
