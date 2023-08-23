@@ -1,0 +1,34 @@
+table {
+    border-collapse: collapse;
+    margin-top: 4rem;
+    border-spacing: 0 3rem;
+    width: 100%;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.784);
+}
+
+th,
+tr,
+td {
+    padding: 1rem;
+}
+
+tr {
+    border-bottom: 1px solid #ccc;
+}
+
+th {
+    text-align: left;
+}
+
+.avatar-wrapper {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+}

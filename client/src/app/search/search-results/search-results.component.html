@@ -10,10 +10,13 @@
             <td>{{ composer.last_name }}</td>
             <td>{{ composer.first_name }}</td>
             <td>
-                <img
-                    [src]="baseApiUrl + '/' + composer.avatar_file_name"
-                    alt=""
-                />
+                <div class="avatar-wrapper">
+                    <img
+                        class="avatar-img"
+                        [src]="baseApiUrl + '/' + composer.avatar_file_name"
+                        alt=""
+                    />
+                </div>
             </td>
         </tr>
     </tbody>
