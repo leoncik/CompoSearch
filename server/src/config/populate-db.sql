@@ -1,6 +1,6 @@
 -- CREATE TABLES
 create TABLE COMPOSERS (
-	id INT,
+	id SERIAL PRIMARY KEY,
 	last_name VARCHAR(50),
 	first_name VARCHAR(50),
 	avatar_file_name VARCHAR(300) DEFAULT '/avatars/default-avatar.png'
