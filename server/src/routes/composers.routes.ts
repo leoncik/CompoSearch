@@ -75,7 +75,7 @@ composersRouter.get('/:composerId', async (req, res) => {
         const composerId = req.params.composerId;
         const composerQuery = await pool.query(
             `
-         SELECT * FROM composers
+         SELECT * FROM COMPOSER_DETAIL
          WHERE id = $1`,
             [composerId]
         );
