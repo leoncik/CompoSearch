@@ -11,7 +11,8 @@ export class SearchService {
 
     constructor(private http: HttpClient) {}
 
-    searchComposers(searchTerm: string): Observable<Composer[]> {
+    // We set an empty string as the default value to fetch all composers if no searchTerm is provided.
+    searchComposers(searchTerm: string = ''): Observable<Composer[]> {
         return this.http.get<Composer[]>(
             `${this.baseUrl}/composers/?name=${searchTerm}`
         );

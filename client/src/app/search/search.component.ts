@@ -9,7 +9,6 @@ import { Composer } from './Composer.model';
     styleUrls: ['./search.component.css'],
 })
 export class SearchComponent implements OnInit {
-    searchTerm = '';
     composers: Composer[] = [];
     baseApiUrl = 'http://localhost:3000';
 
@@ -21,9 +20,8 @@ export class SearchComponent implements OnInit {
         searchTerm: '',
     });
 
-    onSearchSubmit(): void {
-        this.searchTerm = this.searchForm.value.searchTerm ?? '';
-        this.fetchComposers();
+    updateComposerList(newComposers: Composer[]): void {
+        this.composers = newComposers;
     }
 
     ngOnInit(): void {
@@ -32,7 +30,7 @@ export class SearchComponent implements OnInit {
 
     fetchComposers(): void {
         this.searchService
-            .searchComposers(this.searchTerm)
+            .searchComposers()
             .subscribe((composers) => (this.composers = composers));
     }
 }
