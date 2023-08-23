@@ -2,24 +2,5 @@
     <app-search-bar
         (composerFoundEvent)="updateComposerList($event)"
     ></app-search-bar>
-    <table>
-        <thead>
-            <tr>
-                <th>Last name</th>
-                <th>First name</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let composer of composers">
-                <td>{{ composer.last_name }}</td>
-                <td>{{ composer.first_name }}</td>
-                <td>
-                    <img
-                        [src]="baseApiUrl + '/' + composer.avatar_file_name"
-                        alt=""
-                    />
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <app-search-results [composers]="composers"></app-search-results>
 </div>

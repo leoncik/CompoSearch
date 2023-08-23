@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './search/search.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchBarComponent } from './search/search-bar/search-bar.component';
+import { SearchResultsComponent } from './search/search-results/search-results.component';
 
 @NgModule({
     declarations: [
@@ -15,6 +16,7 @@ import { SearchBarComponent } from './search/search-bar/search-bar.component';
         SearchComponent,
         HeaderComponent,
         SearchBarComponent,
+        SearchResultsComponent,
     ],
     imports: [
         BrowserModule,
