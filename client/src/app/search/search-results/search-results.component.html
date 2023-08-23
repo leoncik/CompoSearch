@@ -6,7 +6,10 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let composer of composers">
+        <tr
+            *ngFor="let composer of composers"
+            (click)="onClickTableRow(composer.id)"
+        >
             <td>{{ composer.last_name }}</td>
             <td>{{ composer.first_name }}</td>
             <td>

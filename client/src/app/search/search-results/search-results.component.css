@@ -17,6 +17,13 @@ tr {
     border-bottom: 1px solid #ccc;
 }
 
+tbody tr {
+    cursor: pointer;
+}
+tbody tr:hover {
+    transform: scale(1.02);
+}
+
 th {
     text-align: left;
 }

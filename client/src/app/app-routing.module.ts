@@ -5,7 +5,7 @@ import { ComposerDetailsComponent } from './composer-details/composer-details.co
 
 const routes: Routes = [
     { path: '', component: SearchComponent },
-    { path: 'composer', component: ComposerDetailsComponent },
+    { path: 'composers/:composerId', component: ComposerDetailsComponent },
 ];
 
 @NgModule({
