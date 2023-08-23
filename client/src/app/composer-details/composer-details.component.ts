@@ -11,6 +11,8 @@ import { Observable } from 'rxjs';
 })
 export class ComposerDetailsComponent implements OnInit {
     composerDetails$!: Observable<ComposerDetails>;
+    // Todo : externalize API url
+    baseApiUrl = 'http://localhost:3000';
 
     constructor(
         private searchService: SearchService,

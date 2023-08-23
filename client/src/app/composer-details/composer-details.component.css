@@ -1,0 +1,11 @@
+/* TODO: fix unapplied margin-right property */
+
+.details-wrapper {
+    display: block;
+    margin: 3rem 4rem;
+    background: rgba(255, 255, 255, 0.784);
+    width: 100%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+}

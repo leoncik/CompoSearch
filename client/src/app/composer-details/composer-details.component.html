@@ -1,4 +1,20 @@
-<div *ngIf="composerDetails$ | async as composerDetails">
-    {{ composerDetails.biography }}
-    <a routerLink="/">Go back</a>
+<div
+    class="details-wrapper"
+    *ngIf="composerDetails$ | async as composerDetails"
+>
+    <div class="info">
+        <h1>
+            {{ composerDetails.first_name }} {{ composerDetails.last_name }} ({{
+                composerDetails.birthdate | date
+            }})
+        </h1>
+        <p>{{ composerDetails.biography }}</p>
+        <a routerLink="/">Go back</a>
+    </div>
+    <div class="composer-image-container">
+        <img
+            [src]="baseApiUrl + '/' + composerDetails.avatar_file_name"
+            alt=""
+        />
+    </div>
 </div>
