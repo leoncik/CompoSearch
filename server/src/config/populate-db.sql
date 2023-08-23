@@ -18,10 +18,10 @@ CREATE TABLE COMPOSER_DETAIL (
 );
 
 -- POPULATE COMPOSERS
-INSERT INTO COMPOSERS (id, last_name, first_name) VALUES (1, 'Bach', 'Johann Sebastian');
+INSERT INTO COMPOSERS (id, last_name, first_name, avatar_file_name) VALUES (1, 'Bach', 'Johann Sebastian', '/avatars/Johann_Sebastian_Bach.jpg');
 INSERT INTO COMPOSERS (id, last_name, first_name) VALUES (2, 'Mozart', 'Wolfgang Amadeus');
-INSERT INTO COMPOSERS (id, last_name, first_name) VALUES (3, 'Beethoven', 'Ludwig van');
-INSERT INTO COMPOSERS (id, last_name, first_name) VALUES (4, 'Chopin', 'Frédéric');
+INSERT INTO COMPOSERS (id, last_name, first_name, avatar_file_name) VALUES (3, 'Beethoven', 'Ludwig van', '/avatars/Beethoven.jpg');
+INSERT INTO COMPOSERS (id, last_name, first_name, avatar_file_name) VALUES (4, 'Chopin', 'Frédéric', '/avatars/Chopin-Delacroix.jpg');
 INSERT INTO COMPOSERS (id, last_name, first_name) VALUES (5, 'Debussy', 'Claude');
 INSERT INTO COMPOSERS (id, last_name, first_name) VALUES (6, 'Handel', 'George Frideric');
 INSERT INTO COMPOSERS (id, last_name, first_name) VALUES (7, 'Haydn', 'Joseph');
@@ -43,7 +43,7 @@ INSERT INTO COMPOSERS (id, last_name, first_name) VALUES (22, 'Purcell', 'Henry'
 INSERT INTO COMPOSERS (id, last_name, first_name) VALUES (23, 'Gershwin', 'George');
 INSERT INTO COMPOSERS (id, last_name, first_name) VALUES (24, 'Verdi', 'Giuseppe');
 INSERT INTO COMPOSERS (id, last_name, first_name) VALUES (25, 'Dvorak', 'Antonin');
-INSERT INTO COMPOSERS (id, last_name, first_name) VALUES (26, 'Rachmaninoff', 'Sergei');
+INSERT INTO COMPOSERS (id, last_name, first_name, avatar_file_name) VALUES (26, 'Rachmaninoff', 'Sergei', '/avatars/Sergei_Rachmaninoff.jpg');
 INSERT INTO COMPOSERS (id, last_name, first_name) VALUES (27, 'Saint-Saëns', 'Camille');
 INSERT INTO COMPOSERS (id, last_name, first_name) VALUES (28, 'Orff', 'Carl');
 INSERT INTO COMPOSERS (id, last_name, first_name) VALUES (29, 'Mahler', 'Gustav');
