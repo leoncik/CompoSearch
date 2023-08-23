@@ -25,7 +25,7 @@ const composersRouter = Router();
 export default composersRouter.get('/', async (req, res) => {
     try {
         const { name } = req.query;
-        let composers: QueryResult<any>;
+        let composers: QueryResult<ComposerRow>;
 
         if (name) {
             composers = await pool.query(
