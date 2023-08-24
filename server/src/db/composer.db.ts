@@ -1,5 +1,19 @@
 import pool from '../config/db';
 
+export const getComposersDb = async (name: string | undefined) => {
+    if (name) {
+        return await pool.query(
+            `
+            SELECT * FROM composers
+            WHERE first_name || ' ' || last_name
+            ILIKE $1`,
+            [`%${name}%`]
+        );
+    } else {
+        return await pool.query('SELECT * FROM composers');
+    }
+};
+
 export const getComposerDetailsDb = async (composerId: string) => {
     const query = `
         SELECT cd.id, cd.composer_id, cd.birthdate, cd.nationality, cd.biography,

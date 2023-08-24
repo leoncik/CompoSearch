@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import pool from '../config/db';
-import { QueryResult } from 'pg';
-import { ComposerRow } from '../interfaces/composers';
-import { getComposerDetailController } from '../controllers/composer.controller';
+import {
+    getComposerDetailController,
+    getComposersController,
+} from '../controllers/composer.controller';
 
 const composersRouter = Router();
 
@@ -24,31 +24,7 @@ const composersRouter = Router();
  *         description: Successfully fetched composers
  *
  */
-export default composersRouter.get('/', async (req, res) => {
-    try {
-        const { name } = req.query;
-        let composers: QueryResult<ComposerRow>;
-
-        if (name) {
-            composers = await pool.query(
-                `
-         SELECT * FROM composers
-         WHERE first_name || ' ' || last_name
-         ILIKE $1`,
-                [`%${name}%`]
-            );
-        } else {
-            composers = await pool.query(
-                `
-         SELECT * FROM composers`
-            );
-        }
-
-        res.json(composers.rows);
-    } catch (error) {
-        console.log(error);
-    }
-});
+export default composersRouter.get('/', getComposersController);
 
 /**
  * @openapi

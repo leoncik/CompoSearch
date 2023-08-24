@@ -1,6 +1,19 @@
 import { Request, Response } from 'express';
 import composerService from '../services/composer.service';
 
+export const getComposersController = async (req: Request, res: Response) => {
+    try {
+        const { name } = req.query;
+        if (typeof name === 'string' || typeof name === 'undefined') {
+            const composers = await composerService.getComposers(name);
+            res.json(composers);
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};
+
 export const getComposerDetailController = async (
     req: Request,
     res: Response
