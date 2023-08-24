@@ -1,5 +1,17 @@
 # CompoSearch
 
+About A full-stack search app made with Angular and Express.
+
+## Table of contents
+
+-   [Presentation](#presentation)
+    -   [About this project](#about-this-project)
+-   [How to use](#how-to-use)
+    -   [Launch and stop the project](#launch-and-stop-the-project)
+    -   [Use the pgadmin panel](#use-the-pgadmin-panel)
+      - [Login and create a server](#login-and-create-a-server)
+      - [Run queries](#run-queries)
+
 ## Presentation
 
 ### About this project
