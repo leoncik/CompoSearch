@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Composer } from '../Composer.model';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
     selector: 'app-search-results',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
     styleUrls: ['./search-results.component.css'],
 })
 export class SearchResultsComponent {
-    baseApiUrl = 'http://localhost:3000';
+    baseApiUrl = environment.API_URL;
 
     @Input() composers: Composer[] = [];
 

@@ -2,12 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Composer, ComposerDetails } from './Composer.model';
+import { environment } from 'src/environments/environment.development';
+environment;
 
 @Injectable({
     providedIn: 'root',
 })
 export class SearchService {
-    baseUrl = 'http://localhost:3000';
+    baseUrl = environment.API_URL;
 
     constructor(private http: HttpClient) {}
 

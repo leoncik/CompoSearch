@@ -3,6 +3,7 @@ import { ComposerDetails } from '../search/Composer.model';
 import { SearchService } from '../search/search.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
     selector: 'app-composer-details',
@@ -11,8 +12,7 @@ import { Observable } from 'rxjs';
 })
 export class ComposerDetailsComponent implements OnInit {
     composerDetails$!: Observable<ComposerDetails>;
-    // Todo : externalize API url
-    baseApiUrl = 'http://localhost:3000';
+    baseApiUrl = environment.API_URL;
 
     constructor(
         private searchService: SearchService,
