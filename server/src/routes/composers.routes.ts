@@ -2,6 +2,7 @@ import { Router } from 'express';
 import pool from '../config/db';
 import { QueryResult } from 'pg';
 import { ComposerRow } from '../interfaces/composers';
+import { getComposerDetailController } from '../controllers/composer.controller';
 
 const composersRouter = Router();
 
@@ -70,27 +71,4 @@ export default composersRouter.get('/', async (req, res) => {
  *         description: Composer not found
  *
  */
-composersRouter.get('/:composerId', async (req, res) => {
-    try {
-        const composerId = req.params.composerId;
-        const composerQuery = await pool.query(
-            `
-            SELECT cd.id, cd.composer_id, cd.birthdate, cd.nationality, cd.biography,
-                   c.last_name, c.first_name, c.avatar_file_name
-            FROM COMPOSER_DETAIL cd
-            JOIN COMPOSERS c ON cd.composer_id = c.id
-            WHERE cd.id = $1`,
-            [composerId]
-        );
-
-        if (composerQuery.rows.length === 0) {
-            return res.status(404).json({ error: 'Composer not found' });
-        }
-
-        const composerDetail = composerQuery.rows[0];
-        res.json(composerDetail);
-    } catch (error) {
-        console.log(error);
-        res.status(500).json({ error: 'Internal Server Error' });
-    }
-});
+composersRouter.get('/:composerId', getComposerDetailController);
