@@ -1,6 +1,6 @@
 # CompoSearch
 
-About A full-stack search app made with Angular and Express.
+A full-stack search app made with Angular and Express.
 
 ## Table of contents
 
