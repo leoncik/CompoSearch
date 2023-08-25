@@ -1,0 +1,16 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
+# compiled output
+/dist
+
+# production
+/build

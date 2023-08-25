@@ -11,6 +11,7 @@ A full-stack search app made with Angular and Express.
     -   [Use the pgadmin panel](#use-the-pgadmin-panel)
       - [Login and create a server](#login-and-create-a-server)
       - [Run queries](#run-queries)
+      - [Tests scripts](#tests-scripts)
 
 ## Presentation
 
@@ -54,3 +55,39 @@ Use `sudo docker-compose down` to launch the project.
 - Navigate to your table: `Databases` > `compo_search_database` > `Schemas` > `public` > `Tables` > `table_name`.
 - Right-click on your table name and select: `Query Tool`.
 - Have fun with the query tool!
+
+#### Tests scripts
+```sh
+  pnpm exec playwright test
+  ```
+
+Runs the end-to-end tests.
+```sh
+  pnpm exec playwright test --ui
+  ```
+
+Starts the interactive UI mode.
+
+```sh
+  pnpm exec playwright test --project=chromium
+  ```
+
+Runs the tests only on Desktop Chrome.
+
+```sh
+  pnpm exec playwright test example
+  ```
+Runs the tests in a specific file.
+
+```sh
+  pnpm exec playwright test --debug
+  ```
+Runs the tests in debug mode.
+
+```sh
+  pnpm exec playwright codegen
+  ```
+
+Auto generate tests with Codegen.
+
+Visit https://playwright.dev/docs/intro for more information.
