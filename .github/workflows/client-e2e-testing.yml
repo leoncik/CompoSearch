@@ -1,9 +1,10 @@
 name: Testing client (E2E)
 
 on:
-  push:
+  pull_request:
     branches:
-      - build/ci-testing
+      - master
+      - dev
       # Runs the CI only if changes are made in "client" directory
     paths:
       - "client/**"
