@@ -22,7 +22,8 @@ jobs:
           #     args: [--frozen-lockfile, --strict-peer-dependencies]
           #   - args: [--global, gulp, prettier, typescript]
       - name: Install dependencies
-        run: pnpm ci
+        # run: pnpm ci
+        run: pnpm install --frozen-lockfile
       - name: Install playwright browsers
         run: pnpx playwright install --with-deps
       - name: Run tests
