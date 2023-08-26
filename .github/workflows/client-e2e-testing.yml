@@ -1,0 +1,31 @@
+name: Testing client (E2E)
+
+on:
+  pull_request:
+    branches:
+      - master
+      - dev
+      # Runs the CI only if changes are made in "client" directory
+    paths:
+      - "client/**"
+
+jobs:
+  tests_e2e:
+    name: Run end-to-end tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./client
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Install dependencies
+        # The --ignore-scripts flag is used to prevent Husky-related bugs during installation.
+        run: pnpm install --frozen-lockfile --ignore-scripts
+      - name: Install playwright browsers
+        run: pnpx playwright install --with-deps
+      - name: Run tests
+        run: npx playwright test
+
