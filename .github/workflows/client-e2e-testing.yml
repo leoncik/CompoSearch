@@ -32,8 +32,8 @@ jobs:
         run: pnpx playwright install --with-deps
       # - name: Fix install issues of @playwright/test (1)
       #   run: pnpm rm playwright
-      - name: Fix install issues of @playwright/test (2)
-        run: pnpm add -D @playwright/test
+      # - name: Fix install issues of @playwright/test (2)
+      #   run: pnpm add -D @playwright/test
       - name: Run tests
-        run: pnpx playwright test
+        run: npx playwright test
 
