@@ -5,7 +5,7 @@ import {
 } from '__mocks__/composer.mocks';
 
 test.beforeEach(async ({ page }) => {
-    // Mock the api call before navigating
+    // Mock the api call for the home page
     await page.route(
         'http://localhost:3000/composers/?name=',
         async (route) => {
@@ -14,6 +14,15 @@ test.beforeEach(async ({ page }) => {
         }
     );
     await page.goto('http://localhost:4200/');
+
+    // Mock the api call before navigating to the first composer's details page
+    await page.route(
+        `http://localhost:3000/composers/${mockedJsonComposers[0].id}`,
+        async (route) => {
+            const json = mockedJsonComposersDetails[0];
+            await route.fulfill({ json });
+        }
+    );
 });
 
 test.describe('Composer page', () => {
