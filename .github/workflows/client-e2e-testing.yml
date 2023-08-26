@@ -4,8 +4,9 @@ on:
   push:
     branches:
       - build/ci-testing
-    # paths:
-    #   - "client/**"
+      # Runs the CI only if changes are made in "client" directory
+    paths:
+      - "client/**"
 
 jobs:
   tests_e2e:
@@ -16,24 +17,14 @@ jobs:
         working-directory: ./client
     steps:
       - uses: actions/checkout@v3
-      # - uses: actions/setup-node@v3
       - uses: pnpm/action-setup@v2
         with:
           version: 8
-          # run_install: |
-          #   - recursive: true
-          #     args: [--frozen-lockfile, --strict-peer-dependencies]
-          #   - args: [--global, gulp, prettier, typescript]
       - name: Install dependencies
-        # run: pnpm ci
-        # run: pnpm install --frozen-lockfile --only=production --ignore-scripts
+        # The --ignore-scripts flag is used to prevent Husky-related bugs during installation.
         run: pnpm install --frozen-lockfile --ignore-scripts
       - name: Install playwright browsers
         run: pnpx playwright install --with-deps
-      # - name: Fix install issues of @playwright/test (1)
-      #   run: pnpm rm playwright
-      # - name: Fix install issues of @playwright/test (2)
-      #   run: pnpm add -D @playwright/test
       - name: Run tests
         run: npx playwright test
 
