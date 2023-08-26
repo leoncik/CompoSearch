@@ -29,6 +29,10 @@ jobs:
         run: pnpm install --frozen-lockfile --only=production --ignore-scripts
       - name: Install playwright browsers
         run: pnpx playwright install --with-deps
+      - name: Fix install issues of @playwright/test (1)
+        run: pnpm rm playwright/test
+      - name: Fix install issues of @playwright/test (2)
+        run: pnpm add -D @playwright/test
       - name: Run tests
         run: pnpx playwright test
 
