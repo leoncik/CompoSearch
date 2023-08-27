@@ -10,8 +10,8 @@ A full-stack search app made with Angular and Express.
 -   [How to use](#how-to-use)
     -   [Launch and stop the project](#launch-and-stop-the-project)
     -   [Use the pgadmin panel](#use-the-pgadmin-panel)
-      - [Login and create a server](#login-and-create-a-server)
-      - [Run queries](#run-queries)
+        - [Login and create a server](#login-and-create-a-server)
+        - [Run queries](#run-queries)
       - [Tests scripts](#tests-scripts)
 
 ## Presentation
@@ -66,7 +66,8 @@ Use `sudo docker-compose down` to launch the project.
 - Right-click on your table name and select: `Query Tool`.
 - Have fun with the query tool!
 
-#### Tests scripts
+### Tests scripts
+
 ```sh
   pnpm exec playwright test
   ```
