@@ -9,6 +9,7 @@ A full-stack search app made with Angular and Express.
     -   [Features and tech stack](#features-and-tech-stack)
 -   [How to use](#how-to-use)
     -   [Launch and stop the project](#launch-and-stop-the-project)
+    -   [API documentation](#api-documentation)
       - [Tests scripts (client)](#tests-scripts-client)
     -   [Use the pgadmin panel](#use-the-pgadmin-panel)
         - [Login and create a server](#login-and-create-a-server)
@@ -36,11 +37,17 @@ My focus on this project was more on the structure of the app (Dealing with pre-
 
 Make sure that the Docker daemon is running.
 
-Use `sudo docker-compose up` to launch the project.
+Use `docker-compose up` to launch the project.
 
 The front-end will be available on: http://localhost:4200/
 
-Use `sudo docker-compose down` to launch the project.
+Use `docker-compose down` to stop the project.
+
+### API documentation
+
+To access the API documentation, first make sure that the server is running by running the app (see [Launch and stop the project](#launch-and-stop-the-project)).
+
+The API documentation will be available at this address: http://localhost:3000/api-docs.
 
 ### Tests scripts (client)
 
