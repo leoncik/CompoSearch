@@ -18,7 +18,8 @@ A full-stack search app made with Angular and Express.
 
 ### About this project
 
-This is a personal project I have made to learn more about Docker and continue to explore Angular. It is for now a simple search app where you can search for a composer but I plan to add more features.
+This is a personal project I have made to learn more about Docker and continue to explore Angular. It is a simple search app where you can search for a composer and visit his associated page.  
+My focus on this project was more on the structure of the app (Dealing with pre-commit Hooks in a monorepo architecture, Docker, CI, testing) than the features of the App itself.
 
 ### Features and tech stack
 
