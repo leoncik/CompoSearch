@@ -6,6 +6,7 @@ A full-stack search app made with Angular and Express.
 
 -   [Presentation](#presentation)
     -   [About this project](#about-this-project)
+    -   [Features and tech stack](#features-and-tech-stack)
 -   [How to use](#how-to-use)
     -   [Launch and stop the project](#launch-and-stop-the-project)
     -   [Use the pgadmin panel](#use-the-pgadmin-panel)
@@ -18,6 +19,15 @@ A full-stack search app made with Angular and Express.
 ### About this project
 
 This is a personal project I have made to learn more about Docker and continue to explore Angular. It is for now a simple search app where you can search for a composer but I plan to add more features.
+
+### Features and tech stack
+
+- Fully containerized app with [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/).
+- Client side made with [Angular](https://angular.io/)
+- Server side made with [Express](https://expressjs.com/) (with [TypeScript](https://www.typescriptlang.org/)) to build the API and [PostgreSQL](https://www.postgresql.org/) for the database.
+- E2E tests on the client side made with [Playwright](https://playwright.dev/).
+- CI implementation (to run the tests on each pull request) made with [GitHub Actions](https://github.com/features/actions).
+- Pre-commit hooks to lint and format the code for the client and the server made with [Husky](https://typicode.github.io/husky/), [lint-staged](https://www.npmjs.com/package/lint-staged), [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/)
 
 ## How to use
 
