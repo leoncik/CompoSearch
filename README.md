@@ -9,10 +9,10 @@ A full-stack search app made with Angular and Express.
     -   [Features and tech stack](#features-and-tech-stack)
 -   [How to use](#how-to-use)
     -   [Launch and stop the project](#launch-and-stop-the-project)
+      - [Tests scripts (client)](#tests-scripts-client)
     -   [Use the pgadmin panel](#use-the-pgadmin-panel)
         - [Login and create a server](#login-and-create-a-server)
         - [Run queries](#run-queries)
-      - [Tests scripts](#tests-scripts)
 
 ## Presentation
 
@@ -41,6 +41,23 @@ The front-end will be available on: http://localhost:4200/
 
 Use `sudo docker-compose down` to launch the project.
 
+### Tests scripts (client)
+
+To run the E2E tests for the client, first make sure that you are in the client directory:
+
+```sh
+  cd client
+  ```
+
+Then you can run this command to launch the tests with [UI Mode](https://playwright.dev/docs/test-ui-mode):
+
+```sh
+  pnpm exec playwright test --ui
+  ```
+
+
+Visit https://playwright.dev/docs/test-cli for more information about the most common options available in the command line.
+
 ### Use the pgadmin panel
 
 #### Login and create a server
@@ -65,40 +82,3 @@ Use `sudo docker-compose down` to launch the project.
 - Navigate to your table: `Databases` > `compo_search_database` > `Schemas` > `public` > `Tables` > `table_name`.
 - Right-click on your table name and select: `Query Tool`.
 - Have fun with the query tool!
-
-### Tests scripts
-
-```sh
-  pnpm exec playwright test
-  ```
-
-Runs the end-to-end tests.
-```sh
-  pnpm exec playwright test --ui
-  ```
-
-Starts the interactive UI mode.
-
-```sh
-  pnpm exec playwright test --project=chromium
-  ```
-
-Runs the tests only on Desktop Chrome.
-
-```sh
-  pnpm exec playwright test example
-  ```
-Runs the tests in a specific file.
-
-```sh
-  pnpm exec playwright test --debug
-  ```
-Runs the tests in debug mode.
-
-```sh
-  pnpm exec playwright codegen
-  ```
-
-Auto generate tests with Codegen.
-
-Visit https://playwright.dev/docs/intro for more information.
